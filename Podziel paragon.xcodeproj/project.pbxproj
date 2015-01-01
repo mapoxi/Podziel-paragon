@@ -15,6 +15,8 @@
 		249F2B761A8DF3C600A7183C /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 249F2B751A8DF3C600A7183C /* Person.m */; };
 		249F2B7F1A8DF5C200A7183C /* PPPeopleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 249F2B7E1A8DF5C200A7183C /* PPPeopleTableViewController.m */; };
 		249F2B851A8E118800A7183C /* PPAddPersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 249F2B841A8E118800A7183C /* PPAddPersonViewController.m */; };
+		24B8A8C21A55DFE700E8CE71 /* PersonWithProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B8A8C11A55DFE700E8CE71 /* PersonWithProduct.m */; };
+		24B8A8C51A55E1B600E8CE71 /* PPBillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B8A8C41A55E1B600E8CE71 /* PPBillViewController.m */; };
 		24CAB7001A8AB4E60005420E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 24CAB6FF1A8AB4E60005420E /* main.m */; };
 		24CAB7031A8AB4E60005420E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 24CAB7021A8AB4E60005420E /* AppDelegate.m */; };
 		24CAB7061A8AB4E60005420E /* Podziel_paragon.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 24CAB7041A8AB4E60005420E /* Podziel_paragon.xcdatamodeld */; };
@@ -54,6 +56,10 @@
 		249F2B7E1A8DF5C200A7183C /* PPPeopleTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPPeopleTableViewController.m; sourceTree = "<group>"; };
 		249F2B831A8E118800A7183C /* PPAddPersonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPAddPersonViewController.h; sourceTree = "<group>"; };
 		249F2B841A8E118800A7183C /* PPAddPersonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPAddPersonViewController.m; sourceTree = "<group>"; };
+		24B8A8C01A55DFE700E8CE71 /* PersonWithProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonWithProduct.h; sourceTree = "<group>"; };
+		24B8A8C11A55DFE700E8CE71 /* PersonWithProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonWithProduct.m; sourceTree = "<group>"; };
+		24B8A8C31A55E1B600E8CE71 /* PPBillViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPBillViewController.h; sourceTree = "<group>"; };
+		24B8A8C41A55E1B600E8CE71 /* PPBillViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPBillViewController.m; sourceTree = "<group>"; };
 		24CAB6FA1A8AB4E60005420E /* Podziel paragon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Podziel paragon.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		24CAB6FE1A8AB4E60005420E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24CAB6FF1A8AB4E60005420E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -167,6 +173,8 @@
 				2440C7B91A91380700A13805 /* PPAddProductViewController.h */,
 				2440C7BA1A91380700A13805 /* PPAddProductViewController.m */,
 				2440C7BB1A91380700A13805 /* PPAddProductViewController.xib */,
+				24B8A8C31A55E1B600E8CE71 /* PPBillViewController.h */,
+				24B8A8C41A55E1B600E8CE71 /* PPBillViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -190,6 +198,8 @@
 				243B1F661A8BFE1D00667F8F /* NSManagedObject+CRUD.h */,
 				243B1F671A8BFE1D00667F8F /* NSManagedObject+CRUD.m */,
 				24CAB7041A8AB4E60005420E /* Podziel_paragon.xcdatamodeld */,
+				24B8A8C01A55DFE700E8CE71 /* PersonWithProduct.h */,
+				24B8A8C11A55DFE700E8CE71 /* PersonWithProduct.m */,
 				249F2B741A8DF3C600A7183C /* Person.h */,
 				249F2B751A8DF3C600A7183C /* Person.m */,
 				249F2B711A8DF3C500A7183C /* Product.h */,
@@ -307,6 +317,7 @@
 				24F790ED1A90E2CC00637A85 /* PPPeopleTableViewCell.m in Sources */,
 				24CAB7061A8AB4E60005420E /* Podziel_paragon.xcdatamodeld in Sources */,
 				249F2B761A8DF3C600A7183C /* Person.m in Sources */,
+				24B8A8C51A55E1B600E8CE71 /* PPBillViewController.m in Sources */,
 				24CAB7321A8ABAD20005420E /* PPListTableViewCell.m in Sources */,
 				24CAB7031A8AB4E60005420E /* AppDelegate.m in Sources */,
 				24CAB7281A8AB5400005420E /* PPMainTableViewController.m in Sources */,
@@ -314,6 +325,7 @@
 				24CAB7001A8AB4E60005420E /* main.m in Sources */,
 				243B1F681A8BFE1D00667F8F /* NSManagedObject+CRUD.m in Sources */,
 				249F2B851A8E118800A7183C /* PPAddPersonViewController.m in Sources */,
+				24B8A8C21A55DFE700E8CE71 /* PersonWithProduct.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

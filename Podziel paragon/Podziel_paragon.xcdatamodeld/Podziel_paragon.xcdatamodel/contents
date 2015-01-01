@@ -5,6 +5,11 @@
         <attribute name="personName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="personNick" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="PersonWithProduct" representedClassName="PersonWithProduct" syncable="YES">
+        <attribute name="personID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="productID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="pWPID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+    </entity>
     <entity name="Product" representedClassName="Product" syncable="YES">
         <attribute name="productID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="productName" optional="YES" attributeType="String" syncable="YES"/>
@@ -12,7 +17,8 @@
         <attribute name="productQuantity" optional="YES" attributeType="Float" defaultValueString="0" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Person" positionX="-54" positionY="-9" width="128" height="88"/>
-        <element name="Product" positionX="142" positionY="-54" width="128" height="105"/>
+        <element name="Person" positionX="187" positionY="-459" width="128" height="88"/>
+        <element name="Product" positionX="610" positionY="-459" width="128" height="103"/>
+        <element name="PersonWithProduct" positionX="360" positionY="-457" width="128" height="88"/>
     </elements>
 </model>
