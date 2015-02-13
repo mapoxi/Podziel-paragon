@@ -1,33 +1,33 @@
 //
-//  PPMainTableViewController.m
+//  PPPeopleTableViewController.m
 //  Podziel paragon
 //
-//  Created by Piotr Mlynarski on 10.02.2015.
+//  Created by Piotr Mlynarski on 13.02.2015.
 //  Copyright (c) 2015 Piotr Mlynarski. All rights reserved.
 //
 
-#import "PPMainTableViewController.h"
-#import "PPListTableViewCell.h"
 #import "PPPeopleTableViewController.h"
+#import "PPAddPersonViewController.h"
 
-@interface PPMainTableViewController ()
+@interface PPPeopleTableViewController ()
 
 @end
 
-@implementation PPMainTableViewController
+@implementation PPPeopleTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.navigationItem.title = @"Osoby";
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Dodaj" style:UIBarButtonItemStylePlain target:self action:@selector(addPerson)];
 
-    self.navigationItem.title = @"Paragon";
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Osoby" style:UIBarButtonItemStylePlain target:self action:@selector(addPeople)];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Produkty" style:UIBarButtonItemStylePlain target:self action:@selector(addProducts)];
-
-//    [self.tableView reloadData];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    //tutaj pobieramy wszystkie produkty
+#pragma mark - Events
+
+- (void)addPerson {
+    PPAddPersonViewController *newPersonalSegue = [[PPAddPersonViewController alloc] init];
+    [self.navigationController pushViewController:newPersonalSegue animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,55 +35,27 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Events
-
-- (void)addPeople {
-    PPPeopleTableViewController *personalSegue = [[PPPeopleTableViewController alloc] init];
-    [self.navigationController pushViewController:personalSegue animated:YES];
-}
-
-- (void)addProducts {
-    
-}
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
-    return 1;
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    
-    // tutaj tyle ile pobranych z core data
-    
-    return 1;
+    return 0;
 }
 
-
+/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"listTableViewCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    PPListTableViewCell *listCell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    // Configure the cell...
     
-    if (listCell == nil){
-        NSLog(@"New Cell Made");
-        
-        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"PPListTableViewCell" owner:nil options:nil];
-        
-        for(id currentObject in topLevelObjects)
-        {
-            if([currentObject isKindOfClass:[PPListTableViewCell class]])
-            {
-                listCell = (PPListTableViewCell *)currentObject;
-                break;
-            }
-        }
-    }
-    
-    return listCell;
+    return cell;
 }
+*/
 
 /*
 // Override to support conditional editing of the table view.
