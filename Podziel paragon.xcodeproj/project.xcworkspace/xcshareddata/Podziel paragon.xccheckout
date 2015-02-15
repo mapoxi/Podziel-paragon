@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>ADA58C65-F6F8-4ADB-B160-5FE527D46360</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Podziel paragon</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>EB229E520DC42C8D5A26F59A2F85F1C545434388</key>
+		<string>https://github.com/mapoxi/Podziel-paragon.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Podziel paragon.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>EB229E520DC42C8D5A26F59A2F85F1C545434388</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/mapoxi/Podziel-paragon.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>EB229E520DC42C8D5A26F59A2F85F1C545434388</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>EB229E520DC42C8D5A26F59A2F85F1C545434388</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Podziel%20paragon</string>
+		</dict>
+	</array>
+</dict>
+</plist>

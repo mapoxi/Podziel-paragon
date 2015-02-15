@@ -10,4 +10,8 @@
 
 @interface PPAddPersonViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *addNameTextBox;
+@property (weak, nonatomic) IBOutlet UITextField *addNickTextBox;
+- (IBAction) addPersonButton;
+
 @end

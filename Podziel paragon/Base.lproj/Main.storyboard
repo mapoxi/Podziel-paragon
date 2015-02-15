@@ -4,16 +4,16 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
-        <!--Paragon-->
+        <!--Main View-->
         <scene sceneID="ycM-x4-Erd">
             <objects>
-                <tableViewController title="Paragon" id="RCW-vY-RNd" customClass="PPMainTableViewController" sceneMemberID="viewController">
+                <tableViewController title="Main View" id="RCW-vY-RNd" customClass="PPMainTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="8VD-0N-Dxf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="GDG-0L-k1y">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Paragon" id="GDG-0L-k1y">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GDG-0L-k1y" id="tAG-gh-3pu">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -28,7 +28,7 @@
                     <navigationItem key="navigationItem" title="Root View Controller" id="xMo-Aw-bJh"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <segue destination="xnS-ZD-llD" kind="push" identifier="personSegue" id="Gpy-EL-4z1"/>
+                        <segue destination="xnS-ZD-llD" kind="show" identifier="Se" id="Gpy-EL-4z1"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aea-jw-7pA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -52,16 +52,16 @@
             </objects>
             <point key="canvasLocation" x="165.5" y="362.5"/>
         </scene>
-        <!--Osoby-->
+        <!--People-->
         <scene sceneID="JoD-cE-m1n">
             <objects>
-                <tableViewController title="Osoby" id="xnS-ZD-llD" customClass="PPPeopleTableViewController" sceneMemberID="viewController">
+                <tableViewController title="People" id="xnS-ZD-llD" customClass="PPPeopleTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="W5e-Pp-ER5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="0GB-d6-Mbb">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Osoby" id="0GB-d6-Mbb">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0GB-d6-Mbb" id="dBA-e6-ysJ">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -76,17 +76,17 @@
                     <navigationItem key="navigationItem" title="Root View Controller" id="ZUR-pp-CeA"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <segue destination="iwQ-gQ-087" kind="push" identifier="addPersonSegue" id="zlz-ZK-1oE"/>
+                        <segue destination="iwQ-gQ-087" kind="show" identifier="New Person Segue" id="zlz-ZK-1oE"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k2Y-Pc-WXg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="762.5" y="1274.5"/>
         </scene>
-        <!--Nowa Osoba-->
+        <!--New Person-->
         <scene sceneID="oKZ-Au-Jmd">
             <objects>
-                <viewController title="Nowa Osoba" id="iwQ-gQ-087" customClass="PPAddPersonViewController" sceneMemberID="viewController">
+                <viewController title="New Person" id="iwQ-gQ-087" customClass="PPAddPersonViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ceO-sX-5Al"/>
                         <viewControllerLayoutGuide type="bottom" id="kbb-hY-az9"/>
@@ -94,36 +94,6 @@
                     <view key="view" contentMode="scaleToFill" id="azr-oG-OFX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Imię" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wAZ-b4-IRj">
-                                <rect key="frame" x="40" y="118" width="33" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nick" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQg-5E-l5N">
-                                <rect key="frame" x="40" y="185" width="35" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aVR-Q9-FKf">
-                                <rect key="frame" x="170" y="114" width="130" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="addName:" destination="iwQ-gQ-087" eventType="editingDidEnd" id="Tdi-B0-qgd"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wbv-1a-mAZ">
-                                <rect key="frame" x="170" y="181" width="130" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="addNick:" destination="iwQ-gQ-087" eventType="editingDidEnd" id="q9h-yX-S7o"/>
-                                </connections>
-                            </textField>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Root View Controller" id="fng-43-NHK"/>

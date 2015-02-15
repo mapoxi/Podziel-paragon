@@ -20,7 +20,7 @@
     [super viewDidLoad];
 
     self.navigationItem.title = @"Paragon";
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Osoby" style:UIBarButtonItemStylePlain target:self action:@selector(addPeople)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Osoby" style:UIBarButtonItemStylePlain target:self action:@selector(allPeople)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Produkty" style:UIBarButtonItemStylePlain target:self action:@selector(addProducts)];
 
 //    [self.tableView reloadData];
@@ -37,9 +37,9 @@
 
 #pragma mark - Events
 
-- (void)addPeople {
-    PPPeopleTableViewController *personalSegue = [[PPPeopleTableViewController alloc] init];
-    [self.navigationController pushViewController:personalSegue animated:YES];
+- (void)allPeople {
+    PPPeopleTableViewController *allPeopleSegue = [[PPPeopleTableViewController alloc] init];
+    [self.navigationController pushViewController:allPeopleSegue animated:YES];
 }
 
 - (void)addProducts {
@@ -53,21 +53,12 @@
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    // Return the number of rows in the section.
-    
-    // tutaj tyle ile pobranych z core data
-    
-    return 1;
-}
-
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"listTableViewCell";
+    static NSString *CellIdentifier = @"PPListTableViewCell";
     
-    PPListTableViewCell *listCell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    PPListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    if (listCell == nil){
+    if (cell == nil){
         NSLog(@"New Cell Made");
         
         NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"PPListTableViewCell" owner:nil options:nil];
@@ -76,13 +67,13 @@
         {
             if([currentObject isKindOfClass:[PPListTableViewCell class]])
             {
-                listCell = (PPListTableViewCell *)currentObject;
+                cell = (PPListTableViewCell *)currentObject;
                 break;
             }
         }
     }
     
-    return listCell;
+    return cell;
 }
 
 /*

@@ -7,6 +7,8 @@
 //
 
 #import "PPAddPersonViewController.h"
+#import "Person.h"
+#import "NSManagedObject+CRUD.h"
 
 @interface PPAddPersonViewController ()
 
@@ -16,12 +18,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-}
-- (IBAction)addName:(id)sender {
+    
+    self.navigationItem.title = @"Nowa osoba";
 }
 
-- (IBAction)addNick:(id)sender {
+- (IBAction)addPersonButton {
+    NSArray *howManyCount = [Person readAllObjects];
+    Person *lastPerson = [howManyCount lastObject];
+    
+    Person *addNewPerson = [Person createObject];
+    addNewPerson.personName = _addNameTextBox.text;
+    addNewPerson.personNick = _addNickTextBox.text;
+    addNewPerson.personID = [NSNumber numberWithInt:([lastPerson.personID intValue]+1)];
+    
+    [Person saveDatabase];
+    [self.navigationController popViewControllerAnimated:true];
 }
 
 - (void)didReceiveMemoryWarning {

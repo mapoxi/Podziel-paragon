@@ -8,15 +8,26 @@
 
 #import "PPPeopleTableViewController.h"
 #import "PPAddPersonViewController.h"
+#import "Person.h"
+#import "NSManagedObject+CRUD.h"
+#import "PPPeopleTableViewCell.h"
+
 
 @interface PPPeopleTableViewController ()
+@property PPPeopleTableViewCell *pPPeopleViewCell;
+@property (strong, nonatomic) NSArray *people;
 
 @end
 
 @implementation PPPeopleTableViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    _people = [Person readAllObjects];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _pPPeopleViewCell = [[PPPeopleTableViewCell alloc] init];
     
     self.navigationItem.title = @"Osoby";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Dodaj" style:UIBarButtonItemStylePlain target:self action:@selector(addPerson)];
@@ -26,8 +37,8 @@
 #pragma mark - Events
 
 - (void)addPerson {
-    PPAddPersonViewController *newPersonalSegue = [[PPAddPersonViewController alloc] init];
-    [self.navigationController pushViewController:newPersonalSegue animated:YES];
+    PPAddPersonViewController *newPersonSegue = [[PPAddPersonViewController alloc] init];
+    [self.navigationController pushViewController:newPersonSegue animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -39,25 +50,30 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    // Return the number of rows in the section.
-    return 0;
+    return [_people count];
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    // Configure the cell...
+    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
+        
+        Person *person = _people[indexPath.row];
+        
+        cell.textLabel.text = [NSString stringWithFormat:@"%@", person.personName];
+    }
     
     return cell;
 }
-*/
 
 /*
+ 
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
