@@ -62,11 +62,12 @@
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
 
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"Cell"];
         
         Person *person = _people[indexPath.row];
         
         cell.textLabel.text = [NSString stringWithFormat:@"%@", person.personName];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"Nick: %@", person.personNick];
     }
     
     return cell;

@@ -9,6 +9,7 @@
 #import "PPMainTableViewController.h"
 #import "PPListTableViewCell.h"
 #import "PPPeopleTableViewController.h"
+#import "PPAddProductViewController.h"
 
 @interface PPMainTableViewController ()
 
@@ -43,6 +44,8 @@
 }
 
 - (void)addProducts {
+    PPAddProductViewController *addProductSegue = [[PPAddProductViewController alloc] init];
+    [self.navigationController pushViewController:addProductSegue animated:YES];
     
 }
 

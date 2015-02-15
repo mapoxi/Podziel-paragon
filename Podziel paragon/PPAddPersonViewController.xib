@@ -6,8 +6,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PPAddPersonViewController">
             <connections>
-                <outlet property="addNameTextBox" destination="tzb-lb-wbi" id="ghf-gr-7aa"/>
-                <outlet property="addNickTextBox" destination="qGx-rT-qnC" id="IEN-yS-zvh"/>
+                <outlet property="addNameTextBox" destination="tzb-lb-wbi" id="zau-f8-OYR"/>
+                <outlet property="addNickTextBox" destination="qGx-rT-qnC" id="3t4-eM-q0I"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -44,7 +44,7 @@
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="addPersonButton" destination="-1" eventType="touchUpInside" id="gvY-ui-dlH"/>
+                        <action selector="addPersonButton" destination="-1" eventType="touchUpInside" id="qBZ-sH-kdx"/>
                     </connections>
                 </button>
             </subviews>
