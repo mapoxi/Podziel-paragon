@@ -10,8 +10,11 @@
 #import "PPListTableViewCell.h"
 #import "PPPeopleTableViewController.h"
 #import "PPAddProductViewController.h"
+#import "Product.h"
+#import "NSManagedObject+CRUD.h"
 
 @interface PPMainTableViewController ()
+@property (strong, nonatomic) NSArray *product;
 
 @end
 
@@ -23,12 +26,12 @@
     self.navigationItem.title = @"Paragon";
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Osoby" style:UIBarButtonItemStylePlain target:self action:@selector(allPeople)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Produkty" style:UIBarButtonItemStylePlain target:self action:@selector(addProducts)];
-
-//    [self.tableView reloadData];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    //tutaj pobieramy wszystkie produkty
+    _product = [Product readAllObjects];
+    
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -56,28 +59,26 @@
     return 1;
 }
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [_product count];
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"PPListTableViewCell";
     
-    PPListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     
-    if (cell == nil){
-        NSLog(@"New Cell Made");
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"Cell"];
         
-        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"PPListTableViewCell" owner:nil options:nil];
+        Product *product = _product[indexPath.row];
         
-        for(id currentObject in topLevelObjects)
-        {
-            if([currentObject isKindOfClass:[PPListTableViewCell class]])
-            {
-                cell = (PPListTableViewCell *)currentObject;
-                break;
-            }
-        }
+        cell.textLabel.text = [NSString stringWithFormat:@"%@", product.productName];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"Ilość: %@, cena jednostkowa %@", product.productQuantity, product.productPrice];
     }
     
     return cell;
 }
+
 
 /*
 // Override to support conditional editing of the table view.

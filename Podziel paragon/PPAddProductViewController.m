@@ -18,23 +18,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   // self.navigationController.title = @"Dodaj produkt";
+     self.navigationController.title = @"Dodaj produkt";
 }
 
-/*- (IBAction)addProductToBill {
-    NSArray *howManyCount = [Product readAllObjects];
-     Product *lastProductID = [howManyCount lastObject];
-     
-     Product *addNewProduct = [Product createObject];
-     addNewProduct.productName = _addProductNameTextBox.text;
-     addNewProduct.productQuantity = [NSNumber numberWithInt:(int)_addProductQuantityTextBox.text];
-     addNewProduct.productPrice = [NSNumber numberWithFloat:(int)_addProductPriceTextBox.text];
-     addNewProduct.productID = [NSNumber numberWithInt:([lastProductID.productID intValue]+1)];
-     
-     [Product saveDatabase];
-     [self.navigationController popViewControllerAnimated:true];
-}
-*/
+- (IBAction)addProductToBill {
+ NSArray *howManyCount = [Product readAllObjects];
+ Product *lastProductID = [howManyCount lastObject];
+ 
+ Product *addNewProduct = [Product createObject];
+ addNewProduct.productName = _addProductNameTextBox.text;
+ addNewProduct.productQuantity = [NSNumber numberWithFloat:[_addProductQuantityTextBox.text floatValue]];
+ addNewProduct.productPrice = [NSNumber numberWithFloat:[_addProductPriceTextBox.text floatValue]];
+ addNewProduct.productID = [NSNumber numberWithInt:([lastProductID.productID intValue]+1)];
+ 
+ [Product saveDatabase];
+ [self.navigationController popViewControllerAnimated:true];
+ }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

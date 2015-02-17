@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface PPAddProductViewController : UIViewController
 
-//@property (weak, nonatomic) IBOutlet UITextField *addProductNameTextBox;
-//@property (weak, nonatomic) IBOutlet UITextField *addProductQuantityTextBox;
-//@property (weak, nonatomic) IBOutlet UITextField *addProductPriceTextBox;
-//- (IBAction) addProductToBill;
+@property (weak, nonatomic) IBOutlet UITextField *addProductNameTextBox;
+@property (weak, nonatomic) IBOutlet UITextField *addProductQuantityTextBox;
+@property (weak, nonatomic) IBOutlet UITextField *addProductPriceTextBox;
+
+- (IBAction) addProductToBill;
 
 @end

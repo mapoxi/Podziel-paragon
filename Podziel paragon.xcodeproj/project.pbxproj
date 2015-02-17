@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		243B1F681A8BFE1D00667F8F /* NSManagedObject+CRUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 243B1F671A8BFE1D00667F8F /* NSManagedObject+CRUD.m */; };
-		2440C7B71A91320000A13805 /* PPAddProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2440C7B51A91320000A13805 /* PPAddProductViewController.m */; };
-		2440C7B81A91320000A13805 /* PPAddProductViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2440C7B61A91320000A13805 /* PPAddProductViewController.xib */; };
+		2440C7BC1A91380700A13805 /* PPAddProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2440C7BA1A91380700A13805 /* PPAddProductViewController.m */; };
+		2440C7BD1A91380700A13805 /* PPAddProductViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2440C7BB1A91380700A13805 /* PPAddProductViewController.xib */; };
 		2490C4501A8FC1D20048B8E5 /* PPAddPersonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2490C44F1A8FC1D20048B8E5 /* PPAddPersonViewController.xib */; };
 		249F2B731A8DF3C500A7183C /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 249F2B721A8DF3C500A7183C /* Product.m */; };
 		249F2B761A8DF3C600A7183C /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 249F2B751A8DF3C600A7183C /* Person.m */; };
@@ -42,9 +42,9 @@
 /* Begin PBXFileReference section */
 		243B1F661A8BFE1D00667F8F /* NSManagedObject+CRUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+CRUD.h"; sourceTree = "<group>"; };
 		243B1F671A8BFE1D00667F8F /* NSManagedObject+CRUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+CRUD.m"; sourceTree = "<group>"; };
-		2440C7B41A91320000A13805 /* PPAddProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPAddProductViewController.h; sourceTree = "<group>"; };
-		2440C7B51A91320000A13805 /* PPAddProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPAddProductViewController.m; sourceTree = "<group>"; };
-		2440C7B61A91320000A13805 /* PPAddProductViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPAddProductViewController.xib; sourceTree = "<group>"; };
+		2440C7B91A91380700A13805 /* PPAddProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPAddProductViewController.h; sourceTree = "<group>"; };
+		2440C7BA1A91380700A13805 /* PPAddProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPAddProductViewController.m; sourceTree = "<group>"; };
+		2440C7BB1A91380700A13805 /* PPAddProductViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPAddProductViewController.xib; sourceTree = "<group>"; };
 		2490C44F1A8FC1D20048B8E5 /* PPAddPersonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPAddPersonViewController.xib; sourceTree = "<group>"; };
 		249F2B711A8DF3C500A7183C /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
 		249F2B721A8DF3C500A7183C /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
@@ -164,9 +164,9 @@
 				249F2B831A8E118800A7183C /* PPAddPersonViewController.h */,
 				249F2B841A8E118800A7183C /* PPAddPersonViewController.m */,
 				2490C44F1A8FC1D20048B8E5 /* PPAddPersonViewController.xib */,
-				2440C7B41A91320000A13805 /* PPAddProductViewController.h */,
-				2440C7B51A91320000A13805 /* PPAddProductViewController.m */,
-				2440C7B61A91320000A13805 /* PPAddProductViewController.xib */,
+				2440C7B91A91380700A13805 /* PPAddProductViewController.h */,
+				2440C7BA1A91380700A13805 /* PPAddProductViewController.m */,
+				2440C7BB1A91380700A13805 /* PPAddProductViewController.xib */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -278,13 +278,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2440C7B81A91320000A13805 /* PPAddProductViewController.xib in Resources */,
 				24CAB70C1A8AB4E60005420E /* Main.storyboard in Resources */,
 				24CAB7111A8AB4E60005420E /* LaunchScreen.xib in Resources */,
 				2490C4501A8FC1D20048B8E5 /* PPAddPersonViewController.xib in Resources */,
 				24CAB70E1A8AB4E60005420E /* Images.xcassets in Resources */,
 				24F790EE1A90E2CC00637A85 /* PPPeopleTableViewCell.xib in Resources */,
 				24CAB7331A8ABAD20005420E /* PPListTableViewCell.xib in Resources */,
+				2440C7BD1A91380700A13805 /* PPAddProductViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,7 +310,7 @@
 				24CAB7321A8ABAD20005420E /* PPListTableViewCell.m in Sources */,
 				24CAB7031A8AB4E60005420E /* AppDelegate.m in Sources */,
 				24CAB7281A8AB5400005420E /* PPMainTableViewController.m in Sources */,
-				2440C7B71A91320000A13805 /* PPAddProductViewController.m in Sources */,
+				2440C7BC1A91380700A13805 /* PPAddProductViewController.m in Sources */,
 				24CAB7001A8AB4E60005420E /* main.m in Sources */,
 				243B1F681A8BFE1D00667F8F /* NSManagedObject+CRUD.m in Sources */,
 				249F2B851A8E118800A7183C /* PPAddPersonViewController.m in Sources */,

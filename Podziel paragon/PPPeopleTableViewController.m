@@ -31,7 +31,6 @@
     
     self.navigationItem.title = @"Osoby";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Dodaj" style:UIBarButtonItemStylePlain target:self action:@selector(addPerson)];
-
 }
 
 #pragma mark - Events
