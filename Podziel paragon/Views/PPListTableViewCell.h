@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface PPListTableViewCell : UITableViewCell
+@property (strong, nonatomic) IBOutlet UILabel *Label;
 
 @end

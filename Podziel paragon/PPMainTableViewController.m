@@ -15,6 +15,7 @@
 
 @interface PPMainTableViewController ()
 @property (strong, nonatomic) NSArray *product;
+@property PPListTableViewCell *pPListTableViewCell;
 
 @end
 
@@ -26,6 +27,8 @@
     self.navigationItem.title = @"Paragon";
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Osoby" style:UIBarButtonItemStylePlain target:self action:@selector(allPeople)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Produkty" style:UIBarButtonItemStylePlain target:self action:@selector(addProducts)];
+    
+    _pPListTableViewCell = [[PPListTableViewCell alloc] init];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -63,9 +66,10 @@
     return [_product count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+//dziala - wypisuje zwyklego cella
+/*- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"Cell"];
@@ -77,8 +81,29 @@
     }
     
     return cell;
+}*/
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *CellIdentifier = @"listTableViewCell";
+    
+    PPListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    //NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"PPListTableViewCell" owner:nil options:nil];
+    
+    if(!cell) {
+        
+        [tableView registerNib: [UINib nibWithNibName:@"PPListTableViewCell" bundle:nil] forCellReuseIdentifier:CellIdentifier];
+        cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    }
+    
+    return cell;
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(PPListTableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    Product *writeProduct = _product[indexPath.row];
+    cell.Label.text = writeProduct.productName;
+    
+}
 
 /*
 // Override to support conditional editing of the table view.
