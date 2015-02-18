@@ -83,16 +83,27 @@
     return cell;
 }*/
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    if (indexPath.row == 1) {
+        return 90;
+    }
+    else {
+        return 90;
+    }
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"listTableViewCell";
     
     PPListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    //NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"PPListTableViewCell" owner:nil options:nil];
     
     if(!cell) {
         
         [tableView registerNib: [UINib nibWithNibName:@"PPListTableViewCell" bundle:nil] forCellReuseIdentifier:CellIdentifier];
         cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        
     }
     
     return cell;

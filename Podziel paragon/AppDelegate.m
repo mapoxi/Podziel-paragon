@@ -123,5 +123,16 @@
         }
     }
 }
+////////////////////////////
+/*
++(void)fixHeightOfThisLabel:(UILabel *)aLabel
+{
+    aLabel.frame = CGRectMake(aLabel.frame.origin.x,
+                              aLabel.frame.origin.y,
+                              aLabel.frame.size.width,
+                              [AppDelegate heightOfTextForString:aLabel.text
+                                                         andFont:aLabel.font
+                                                         maxSize:CGSizeMake(aLabel.frame.size.width, MAXFLOAT)]);
+}*/
 
 @end
