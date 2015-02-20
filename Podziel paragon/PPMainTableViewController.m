@@ -17,6 +17,7 @@
 @property (strong, nonatomic) NSArray *product;
 @property PPListTableViewCell *pPListTableViewCell;
 
+
 @end
 
 @implementation PPMainTableViewController
@@ -85,14 +86,10 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    if (indexPath.row == 1) {
-        return 90;
-    }
-    else {
-        return 90;
-    }
+    return 100;
 }
+
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"listTableViewCell";
@@ -104,6 +101,7 @@
         [tableView registerNib: [UINib nibWithNibName:@"PPListTableViewCell" bundle:nil] forCellReuseIdentifier:CellIdentifier];
         cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         
+        
     }
     
     return cell;
@@ -112,7 +110,9 @@
 - (void)tableView:(UITableView *)tableView willDisplayCell:(PPListTableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     
     Product *writeProduct = _product[indexPath.row];
-    cell.Label.text = writeProduct.productName;
+    cell.label.text = writeProduct.productName;
+    cell.quantity.text = [NSString stringWithFormat: @"%@", (NSString *)writeProduct.productQuantity];
+    cell.price.text = [NSString stringWithFormat: @"%@", (NSString *)writeProduct.productPrice];
     
 }
 

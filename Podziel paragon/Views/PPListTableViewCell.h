@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface PPListTableViewCell : UITableViewCell
-@property (strong, nonatomic) IBOutlet UILabel *Label;
+@property (strong, nonatomic) IBOutlet UILabel *label;
+@property (strong, nonatomic) IBOutlet UILabel *quantity;
+@property (strong, nonatomic) IBOutlet UILabel *price;
 
 @end

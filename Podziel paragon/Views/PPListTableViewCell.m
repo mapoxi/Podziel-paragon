@@ -18,15 +18,8 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
     
-    _Label.numberOfLines = 5;
-    /*CGRect newFrame = _Label.frame;
-    newFrame.size = CGSizeMake(130, 84);
-    _Label.frame = newFrame;*/
-    
-    
+    _label.numberOfLines = 7;
 
-    
-    
     NSLog(@"-------111111--------");
     // Configure the view for the selected state
 }
