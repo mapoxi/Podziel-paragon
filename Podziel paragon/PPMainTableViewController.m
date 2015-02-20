@@ -30,11 +30,12 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Produkty" style:UIBarButtonItemStylePlain target:self action:@selector(addProducts)];
     
     _pPListTableViewCell = [[PPListTableViewCell alloc] init];
+    NSLog(@"vDL");
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     _product = [Product readAllObjects];
-    
+    NSLog(@"Kurwica");
     [self.tableView reloadData];
 }
 
@@ -53,6 +54,12 @@
 - (void)addProducts {
     PPAddProductViewController *addProductSegue = [[PPAddProductViewController alloc] init];
     [self.navigationController pushViewController:addProductSegue animated:YES];
+    
+}
+
+- (void)editSwitch {
+    
+    
     
 }
 
@@ -86,7 +93,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 100;
+    return 120;
 }
 
 
