@@ -30,12 +30,12 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Produkty" style:UIBarButtonItemStylePlain target:self action:@selector(addProducts)];
     
     _pPListTableViewCell = [[PPListTableViewCell alloc] init];
-    NSLog(@"vDL");
+    //NSLog(@"vDL");
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     _product = [Product readAllObjects];
-    NSLog(@"Kurwica");
+    //NSLog(@"Kurwica");
     [self.tableView reloadData];
 }
 
@@ -54,12 +54,6 @@
 - (void)addProducts {
     PPAddProductViewController *addProductSegue = [[PPAddProductViewController alloc] init];
     [self.navigationController pushViewController:addProductSegue animated:YES];
-    
-}
-
-- (void)editSwitch {
-    
-    
     
 }
 
@@ -92,7 +86,8 @@
 }*/
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+{   //NSLog(@"3. Szerokosc rowa");
+    
     return 120;
 }
 
@@ -102,13 +97,12 @@
     static NSString *CellIdentifier = @"listTableViewCell";
     
     PPListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
+    //NSLog(@"2. Create cell");
     if(!cell) {
         
         [tableView registerNib: [UINib nibWithNibName:@"PPListTableViewCell" bundle:nil] forCellReuseIdentifier:CellIdentifier];
         cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-        
-        
+
     }
     
     return cell;
@@ -116,11 +110,21 @@
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(PPListTableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    //NSLog(@"5. Wyswietlanie cella");
     Product *writeProduct = _product[indexPath.row];
     cell.label.text = writeProduct.productName;
     cell.quantity.text = [NSString stringWithFormat: @"%@", (NSString *)writeProduct.productQuantity];
     cell.price.text = [NSString stringWithFormat: @"%@", (NSString *)writeProduct.productPrice];
     
+    //switche i labelki
+    if (cell.switch1.tag == 0) {
+    cell.switch1.tag = [writeProduct.productID intValue]*10;
+    cell.switch2.tag = [writeProduct.productID intValue]*10+1;
+    cell.switch3.tag = [writeProduct.productID intValue]*10+2;
+    cell.switch4.tag = [writeProduct.productID intValue]*10+3;
+    cell.switch5.tag = [writeProduct.productID intValue]*10+4;
+    cell.switch6.tag = [writeProduct.productID intValue]*10+5;
+    }
 }
 
 /*
