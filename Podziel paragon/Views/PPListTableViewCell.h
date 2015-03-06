@@ -26,5 +26,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel6;
 
 @property (strong, nonatomic) NSArray *people;
+- (void)addBlinkPosition: (int)aSwitchTag;
 
 @end

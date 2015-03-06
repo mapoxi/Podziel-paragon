@@ -2,7 +2,7 @@
 //  Product.m
 //  Podziel paragon
 //
-//  Created by Piotr Mlynarski on 13.02.2015.
+//  Created by Piotr Mlynarski on 01.01.2015.
 //  Copyright (c) 2015 Piotr Mlynarski. All rights reserved.
 //
 
@@ -11,6 +11,7 @@
 
 @implementation Product
 
+@dynamic productDivide;
 @dynamic productID;
 @dynamic productName;
 @dynamic productPrice;

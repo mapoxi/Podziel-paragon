@@ -16,6 +16,7 @@
 + (id)createObject;
 + (id)readOrCreateObjectWithParamterName:(NSString *)parameterName andValue:(id)parameterValue;
 + (id)readObjectWithParamterName:(NSString *)parameterName andValue:(id)parameterValue;
++ (id)readObjectsWithParamterName:(NSString *)parameterName andValue:(id)parameterValue;
 + (NSArray*)readObjectsWithPredicate:(NSPredicate*)pred andSortKey:(NSString*)sortKey;
 + (NSArray *)readAllObjects;
 + (void)removeAllObjects;

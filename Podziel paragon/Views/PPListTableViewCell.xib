@@ -40,27 +40,46 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ProductName" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x5Y-sV-Ff6">
                         <rect key="frame" x="8" y="8" width="210" height="20.5"/>
+                        <gestureRecognizers/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="y7u-gf-ivi">
                         <rect key="frame" x="8" y="44.5" width="51" height="31"/>
+                        <connections>
+                            <action selector="clickSwitch:" destination="KGk-i7-Jjw" eventType="valueChanged" id="o2d-8U-Nxe"/>
+                        </connections>
                     </switch>
                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2cj-ln-Fmg">
                         <rect key="frame" x="69" y="44.5" width="51" height="31"/>
+                        <connections>
+                            <action selector="clickSwitch:" destination="KGk-i7-Jjw" eventType="valueChanged" id="Y0G-lH-NyA"/>
+                        </connections>
                     </switch>
                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="22o-RX-xqo">
                         <rect key="frame" x="130" y="40" width="51" height="31"/>
+                        <connections>
+                            <action selector="clickSwitch:" destination="KGk-i7-Jjw" eventType="valueChanged" id="xeU-ld-Xe2"/>
+                        </connections>
                     </switch>
                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2lZ-V7-xBe">
                         <rect key="frame" x="191" y="41" width="51" height="31"/>
+                        <connections>
+                            <action selector="clickSwitch:" destination="KGk-i7-Jjw" eventType="valueChanged" id="e56-AS-emN"/>
+                        </connections>
                     </switch>
                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="UYj-hd-rp7">
                         <rect key="frame" x="252" y="40" width="51" height="31"/>
+                        <connections>
+                            <action selector="clickSwitch:" destination="KGk-i7-Jjw" eventType="valueChanged" id="PLD-LT-AFU"/>
+                        </connections>
                     </switch>
                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="VeW-i6-bsP">
                         <rect key="frame" x="313" y="40" width="51" height="31"/>
+                        <connections>
+                            <action selector="clickSwitch:" destination="KGk-i7-Jjw" eventType="valueChanged" id="lnJ-fF-WMc"/>
+                        </connections>
                     </switch>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hjQ-NJ-uAJ">
                         <rect key="frame" x="11" y="49.5" width="46" height="20.5"/>
@@ -173,6 +192,7 @@
                     </mask>
                 </variation>
             </tableViewCellContentView>
+            <gestureRecognizers/>
             <connections>
                 <outlet property="Quantity" destination="77f-qU-Qci" id="0PF-zT-q4x"/>
                 <outlet property="label" destination="x5Y-sV-Ff6" id="Afc-j3-lIG"/>

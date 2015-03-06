@@ -11,8 +11,9 @@
 
 @implementation PersonWithProduct
 
-@dynamic pWPID;
+@dynamic positionIsOn;
 @dynamic personID;
 @dynamic productID;
+@dynamic pWPID;
 
 @end

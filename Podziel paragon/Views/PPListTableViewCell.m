@@ -9,6 +9,8 @@
 #import "PPListTableViewCell.h"
 #import "NSManagedObject+CRUD.h"
 #import "Person.h"
+#import "Product.h"
+#import "PersonWithProduct.h"
 
 @implementation PPListTableViewCell
 
@@ -79,9 +81,45 @@
         _nameLabel6.text = [NSString stringWithFormat:@"%@", person.personNick];
         _nameLabel6.adjustsFontSizeToFitWidth = YES;
     }
-    
-    //UISwitch *label = (UISwitch *)[self.contentView viewWithTag:1];
-    //label.hidden = NO;
    }
+
+- (IBAction)clickSwitch: (UISwitch *) aSwitch {
+    
+    NSNumber *prodID = [NSNumber numberWithLong:((aSwitch.tag - (aSwitch.tag%10))/10)];
+    Product  *record = [Product readObjectWithParamterName:@"productID" andValue:prodID];
+    PersonWithProduct *editPWPID = [PersonWithProduct readObjectWithParamterName:@"pWPID" andValue:[NSNumber numberWithLong: aSwitch.tag]];
+    
+    if(aSwitch.isOn) {
+        record.productDivide = [NSNumber numberWithInt:([record.productDivide intValue]+1)];
+        editPWPID.positionIsOn = 1;
+        //NSLog(@"Włączyłem Switcha: %ld", (aSwitch.tag));
+    }
+    else {
+        record.productDivide = [NSNumber numberWithInt:([record.productDivide intValue]-1)];
+        editPWPID.positionIsOn = 0;
+        //NSLog(@"Wyłączyłem Switcha");
+    }
+    [Product saveDatabase];
+    [PersonWithProduct saveDatabase];
+}
+
+- (void)addBlinkPosition: (int)aSwitchTag {
+    //NSLog(@"aSwitchTag to: %d", aSwitchTag);
+     NSArray *howManyCount = [PersonWithProduct readAllObjects];
+     PersonWithProduct *lastID = [howManyCount lastObject];
+    
+    int jeden = (aSwitchTag - (aSwitchTag%10))/10;
+    int dwa = [lastID.productID intValue];
+    int trzy = [lastID.personID intValue];
+    
+    if ((jeden > dwa) || ((jeden == dwa) && (trzy < 5))) {
+     PersonWithProduct *addNewPosition = [PersonWithProduct createObject];
+     addNewPosition.pWPID = [NSNumber numberWithInt:aSwitchTag];
+     addNewPosition.productID = [NSNumber numberWithInt:(aSwitchTag - (aSwitchTag%10))/10];
+     addNewPosition.personID = [NSNumber numberWithInt:(aSwitchTag%10)];
+     addNewPosition.positionIsOn = 0;
+     [PersonWithProduct saveDatabase];
+    }
+}
 
 @end

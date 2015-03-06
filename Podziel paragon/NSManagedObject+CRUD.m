@@ -67,12 +67,34 @@
     
     NSArray *results = [[self database] executeFetchRequest:request error: &error];
     
-//    if ([GeneralUtils isntEmpty:results]) {
-//        object = [results objectAtIndex:0];
-//    }
+    if ([results count]) {
+        object = [results objectAtIndex:0];
+    }
     
     return object;    
 }
+
++ (id)readObjectsWithParamterName:(NSString *)parameterName andValue:(id)parameterValue {
+    //NSManagedObject *object = nil;
+    
+    NSString *className = [self entityName];
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:className];
+    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:parameterName ascending:YES];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K == %@", parameterName, parameterValue];
+    
+    request.sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+    request.predicate = predicate;
+    NSError *error;
+    
+    NSArray *results = [[self database] executeFetchRequest:request error: &error];
+    
+   // if ([results count]) {
+   //     object = [results objectAtIndex:0];
+   // }
+    
+    return results;
+}
+
 
 + (NSArray*)readObjectsWithPredicate:(NSPredicate*)pred andSortKey:(NSString*)sortKey {
     

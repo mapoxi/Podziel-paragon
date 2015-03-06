@@ -17,7 +17,6 @@
 @property (strong, nonatomic) NSArray *product;
 @property PPListTableViewCell *pPListTableViewCell;
 
-
 @end
 
 @implementation PPMainTableViewController
@@ -124,6 +123,14 @@
     cell.switch4.tag = [writeProduct.productID intValue]*10+3;
     cell.switch5.tag = [writeProduct.productID intValue]*10+4;
     cell.switch6.tag = [writeProduct.productID intValue]*10+5;
+    
+        [_pPListTableViewCell addBlinkPosition:(int)cell.switch1.tag];
+        [_pPListTableViewCell addBlinkPosition:(int)cell.switch2.tag];
+        [_pPListTableViewCell addBlinkPosition:(int)cell.switch3.tag];
+        [_pPListTableViewCell addBlinkPosition:(int)cell.switch4.tag];
+        [_pPListTableViewCell addBlinkPosition:(int)cell.switch5.tag];
+        [_pPListTableViewCell addBlinkPosition:(int)cell.switch6.tag];
+    
     }
 }
 

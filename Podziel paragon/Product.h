@@ -2,7 +2,7 @@
 //  Product.h
 //  Podziel paragon
 //
-//  Created by Piotr Mlynarski on 13.02.2015.
+//  Created by Piotr Mlynarski on 01.01.2015.
 //  Copyright (c) 2015 Piotr Mlynarski. All rights reserved.
 //
 
@@ -12,6 +12,7 @@
 
 @interface Product : NSManagedObject
 
+@property (nonatomic, retain) NSNumber * productDivide;
 @property (nonatomic, retain) NSNumber * productID;
 @property (nonatomic, retain) NSString * productName;
 @property (nonatomic, retain) NSNumber * productPrice;
