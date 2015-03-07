@@ -2,7 +2,7 @@
 //  PersonWithProduct.m
 //  Podziel paragon
 //
-//  Created by Piotr Mlynarski on 01.01.2015.
+//  Created by Piotr Mlynarski on 06.03.2015.
 //  Copyright (c) 2015 Piotr Mlynarski. All rights reserved.
 //
 
@@ -11,8 +11,8 @@
 
 @implementation PersonWithProduct
 
-@dynamic positionIsOn;
 @dynamic personID;
+@dynamic positionIsOn;
 @dynamic productID;
 @dynamic pWPID;
 

@@ -50,54 +50,64 @@
         _name2.hidden = NO;
         _price2.hidden = NO;
         _name2.text = [NSString stringWithFormat:@"%@", person.personNick];
-        //_price2.text = [NSString stringWithFormat:@"%@", [self personSumUp:person.personID]];
+        _price2.text = [NSString stringWithFormat:@"%@", [self personSumUp:person.personID]];
     }
     if ([_people count] > 2) {
         Person *person = _people[2];
         _name3.hidden = NO;
         _price3.hidden = NO;
         _name3.text = [NSString stringWithFormat:@"%@", person.personNick];
-        //_price3.text = [NSString stringWithFormat:@"%@", [self personSumUp:person.personID]];
+        _price3.text = [NSString stringWithFormat:@"%@", [self personSumUp:person.personID]];
     }
     if ([_people count] > 3) {
         Person *person = _people[3];
         _name4.hidden = NO;
         _price4.hidden = NO;
         _name4.text = [NSString stringWithFormat:@"%@", person.personNick];
-        //_price4.text = [NSString stringWithFormat:@"%@", [self personSumUp:person.personID]];
+        _price4.text = [NSString stringWithFormat:@"%@", [self personSumUp:person.personID]];
     }
     if ([_people count] > 4) {
         Person *person = _people[4];
         _name5.hidden = NO;
         _price5.hidden = NO;
         _name5.text = [NSString stringWithFormat:@"%@", person.personNick];
-        //_price5.text = [NSString stringWithFormat:@"%@", [self personSumUp:person.personID]];
+        _price5.text = [NSString stringWithFormat:@"%@", [self personSumUp:person.personID]];
     }
     if ([_people count] > 5) {
         Person *person = _people[5];
         _name6.hidden = NO;
         _price6.hidden = NO;
         _name6.text = [NSString stringWithFormat:@"%@", person.personNick];
-        //_price6.text = [NSString stringWithFormat:@"%@", [self personSumUp:person.personID]];
+        _price6.text = [NSString stringWithFormat:@"%@", [self personSumUp:person.personID]];
     }
-
+    
+    /*NSArray *test = [Person readAllObjects];
+    NSEnumerator *enumerator = [test objectEnumerator];
+    for (Person *zmienna in enumerator) {
+        NSLog(@"PersonID %@ || personName %@ || personNick %@", zmienna.personID, zmienna.personName, zmienna.personNick);
+    }*/
+    /*NSArray *test1 = [Product readAllObjects];
+    NSEnumerator *enumerator1 = [test1 objectEnumerator];
+    for (Product *zmienna1 in enumerator1) {
+        NSLog(@"ID %@ || name %@ || price %@ || naIle %@ || ile %@", zmienna1.productID, zmienna1.productName, zmienna1.productPrice, zmienna1.productDivide, zmienna1.productQuantity);
+    }*/
+    
 }
 
+
 - (NSNumber *)personSumUp: (NSNumber *)personID {
-    float podsumowanie = 0;
-    NSArray *readPersonToSumUp = [PersonWithProduct readObjectsWithParamterName:@"productID" andValue:personID];
-    //NSArray *readPersonToSumUp = [PersonWithProduct readObjectsWithPredicate:[NSPredicate predicateWithFormat:@"%@", personID] andSortKey:@"personID"];
-    
+    double podsumowanie = 0;
+    NSArray *readPersonToSumUp = [PersonWithProduct readObjectsWithParamterName:@"personID" andValue:personID];
     
     NSEnumerator *enumerator = [readPersonToSumUp objectEnumerator];
-    PersonWithProduct *zmienna;
-    while (zmienna = [enumerator nextObject]) {
-        if (zmienna.positionIsOn == 1) {
+    for (PersonWithProduct *zmienna in enumerator) {
+        if ([zmienna.positionIsOn intValue] == 1) {
             Product *selectedProduct = [Product readObjectWithParamterName:@"productID" andValue:zmienna.productID];
-            podsumowanie = podsumowanie + [selectedProduct.productPrice floatValue]/[selectedProduct.productDivide floatValue];
+            //NSLog(@"Price: %f dzielNa: %f", [selectedProduct.productPrice doubleValue], [selectedProduct.productDivide doubleValue]);
+            podsumowanie = podsumowanie + [selectedProduct.productPrice doubleValue]/[selectedProduct.productDivide doubleValue];
         }
     }
-    return [NSNumber numberWithFloat:podsumowanie];
+    return [NSNumber numberWithDouble:podsumowanie];
 }
 
 - (void)didReceiveMemoryWarning {

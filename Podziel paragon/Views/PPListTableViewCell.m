@@ -45,6 +45,7 @@
         _nameLabel1.hidden = NO;
         _nameLabel1.text = [NSString stringWithFormat:@"%@", person.personNick];
         _nameLabel1.adjustsFontSizeToFitWidth = YES;
+        //NSLog(@"setSelected %@ %@", person.personID, person.personName);
     }
     if ([_people count] > 1) {
         Person *person = _people[1];
@@ -91,12 +92,12 @@
     
     if(aSwitch.isOn) {
         record.productDivide = [NSNumber numberWithInt:([record.productDivide intValue]+1)];
-        editPWPID.positionIsOn = 1;
-        //NSLog(@"Włączyłem Switcha: %ld", (aSwitch.tag));
+        editPWPID.positionIsOn = [NSNumber numberWithInt:1];
+        NSLog(@"Włączyłem Switcha: %@", editPWPID.personID);
     }
     else {
         record.productDivide = [NSNumber numberWithInt:([record.productDivide intValue]-1)];
-        editPWPID.positionIsOn = 0;
+        editPWPID.positionIsOn = [NSNumber numberWithInt:0];
         //NSLog(@"Wyłączyłem Switcha");
     }
     [Product saveDatabase];
@@ -104,7 +105,6 @@
 }
 
 - (void)addBlinkPosition: (int)aSwitchTag {
-    //NSLog(@"aSwitchTag to: %d", aSwitchTag);
      NSArray *howManyCount = [PersonWithProduct readAllObjects];
      PersonWithProduct *lastID = [howManyCount lastObject];
     
@@ -117,7 +117,7 @@
      addNewPosition.pWPID = [NSNumber numberWithInt:aSwitchTag];
      addNewPosition.productID = [NSNumber numberWithInt:(aSwitchTag - (aSwitchTag%10))/10];
      addNewPosition.personID = [NSNumber numberWithInt:(aSwitchTag%10)];
-     addNewPosition.positionIsOn = 0;
+        addNewPosition.positionIsOn = [NSNumber numberWithInt:0];
      [PersonWithProduct saveDatabase];
     }
 }

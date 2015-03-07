@@ -7,7 +7,7 @@
     </entity>
     <entity name="PersonWithProduct" representedClassName="PersonWithProduct" syncable="YES">
         <attribute name="personID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <attribute name="positionIsOn" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="positionIsOn" optional="YES" attributeType="Integer 64" syncable="YES"/>
         <attribute name="productID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="pWPID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
     </entity>

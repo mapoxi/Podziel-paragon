@@ -11,6 +11,7 @@
 #import "PPPeopleTableViewController.h"
 #import "PPAddProductViewController.h"
 #import "Product.h"
+#import "PersonWithProduct.h"
 #import "NSManagedObject+CRUD.h"
 
 @interface PPMainTableViewController ()
@@ -67,25 +68,8 @@
     return [_product count];
 }
 
-//dziala - wypisuje zwyklego cella
-/*- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-    
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"Cell"];
-        
-        Product *product = _product[indexPath.row];
-        
-        cell.textLabel.text = [NSString stringWithFormat:@"%@", product.productName];
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"Ilość: %@, cena jednostkowa %@", product.productQuantity, product.productPrice];
-    }
-    
-    return cell;
-}*/
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{   //NSLog(@"3. Szerokosc rowa");
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    //NSLog(@"3. Szerokosc rowa");
     
     return 120;
 }
@@ -111,6 +95,7 @@
     
     //NSLog(@"5. Wyswietlanie cella");
     Product *writeProduct = _product[indexPath.row];
+    
     cell.label.text = writeProduct.productName;
     cell.quantity.text = [NSString stringWithFormat: @"%@", (NSString *)writeProduct.productQuantity];
     cell.price.text = [NSString stringWithFormat: @"%@", (NSString *)writeProduct.productPrice];
@@ -123,13 +108,37 @@
     cell.switch4.tag = [writeProduct.productID intValue]*10+3;
     cell.switch5.tag = [writeProduct.productID intValue]*10+4;
     cell.switch6.tag = [writeProduct.productID intValue]*10+5;
-    
         [_pPListTableViewCell addBlinkPosition:(int)cell.switch1.tag];
         [_pPListTableViewCell addBlinkPosition:(int)cell.switch2.tag];
         [_pPListTableViewCell addBlinkPosition:(int)cell.switch3.tag];
         [_pPListTableViewCell addBlinkPosition:(int)cell.switch4.tag];
         [_pPListTableViewCell addBlinkPosition:(int)cell.switch5.tag];
         [_pPListTableViewCell addBlinkPosition:(int)cell.switch6.tag];
+        
+        PersonWithProduct *lookSwitch1 = [PersonWithProduct readObjectWithParamterName:@"pWPID" andValue:[NSNumber numberWithLong:cell.switch1.tag]];
+        if ([lookSwitch1.positionIsOn intValue] == 1) {
+            cell.switch1.on = YES;
+        }
+        PersonWithProduct *lookSwitch2 = [PersonWithProduct readObjectWithParamterName:@"pWPID" andValue:[NSNumber numberWithLong:cell.switch2.tag]];
+        if ([lookSwitch2.positionIsOn intValue] == 1) {
+            cell.switch2.on = YES;
+        }
+        PersonWithProduct *lookSwitch3 = [PersonWithProduct readObjectWithParamterName:@"pWPID" andValue:[NSNumber numberWithLong:cell.switch3.tag]];
+        if ([lookSwitch3.positionIsOn intValue] == 1) {
+            cell.switch3.on = YES;
+        }
+        PersonWithProduct *lookSwitch4 = [PersonWithProduct readObjectWithParamterName:@"pWPID" andValue:[NSNumber numberWithLong:cell.switch4.tag]];
+        if ([lookSwitch4.positionIsOn intValue] == 1) {
+            cell.switch4.on = YES;
+        }
+        PersonWithProduct *lookSwitch5 = [PersonWithProduct readObjectWithParamterName:@"pWPID" andValue:[NSNumber numberWithLong:cell.switch5.tag]];
+        if ([lookSwitch5.positionIsOn intValue] == 1) {
+            cell.switch5.on = YES;
+        }
+        PersonWithProduct *lookSwitch6 = [PersonWithProduct readObjectWithParamterName:@"pWPID" andValue:[NSNumber numberWithLong:cell.switch6.tag]];
+        if ([lookSwitch6.positionIsOn intValue] == 1) {
+            cell.switch6.on = YES;
+        }
     
     }
 }
