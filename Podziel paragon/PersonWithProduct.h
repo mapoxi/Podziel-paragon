@@ -12,7 +12,7 @@
 
 @interface PersonWithProduct : NSManagedObject
 
-@property (nonatomic, retain) NSNumber * personID;
+@property (nonatomic) int personID;
 @property (nonatomic, retain) NSNumber * positionIsOn;
 @property (nonatomic, retain) NSNumber * productID;
 @property (nonatomic, retain) NSNumber * pWPID;

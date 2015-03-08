@@ -107,13 +107,13 @@
     
     int jeden = (aSwitchTag - (aSwitchTag%10))/10;
     int dwa = [lastID.productID intValue];
-    int trzy = [lastID.personID intValue];
+    int trzy = lastID.personID;
     
     if ((jeden > dwa) || ((jeden == dwa) && (trzy < 6))) {
      PersonWithProduct *addNewPosition = [PersonWithProduct createObject];
      addNewPosition.pWPID = [NSNumber numberWithInt:aSwitchTag];
      addNewPosition.productID = [NSNumber numberWithInt:(aSwitchTag - (aSwitchTag%10))/10];
-     addNewPosition.personID = [NSNumber numberWithInt:(aSwitchTag%10)];
+     addNewPosition.personID = aSwitchTag%10;
         addNewPosition.positionIsOn = [NSNumber numberWithInt:0];
      [PersonWithProduct saveDatabase];
     }

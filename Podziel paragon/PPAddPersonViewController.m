@@ -27,7 +27,7 @@
     Person *addNewPerson = [Person createObject];
     addNewPerson.personName = _addNameTextBox.text;
     addNewPerson.personNick = _addNickTextBox.text;
-    addNewPerson.personID = [NSNumber numberWithInt:([lastPerson.personID intValue]+1)];
+    addNewPerson.personID = lastPerson.personID + 1;
     [Person saveDatabase];
     [self.navigationController popViewControllerAnimated:true];
 }

@@ -79,9 +79,9 @@
     }
 }
 
-- (double)personSumUp: (NSNumber *)personID {
+- (double)personSumUp: (int)personID {
     double podsumowanie = 0;
-    NSArray *readPersonToSumUp = [PersonWithProduct readObjectsWithParamterName:@"personID" andValue:personID];
+    NSArray *readPersonToSumUp = [PersonWithProduct readObjectsWithParamterName:@"personID" andValue:[NSNumber numberWithInt:personID]];
     NSEnumerator *enumerator = [readPersonToSumUp objectEnumerator];
     for (PersonWithProduct *zmienna in enumerator) {
         if ([zmienna.positionIsOn intValue] == 1) {
