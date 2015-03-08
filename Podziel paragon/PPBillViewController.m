@@ -82,10 +82,11 @@
 - (double)personSumUp: (int)personID {
     double podsumowanie = 0;
     NSArray *readPersonToSumUp = [PersonWithProduct readObjectsWithParamterName:@"personID" andValue:[NSNumber numberWithInt:personID]];
+    
     NSEnumerator *enumerator = [readPersonToSumUp objectEnumerator];
     for (PersonWithProduct *zmienna in enumerator) {
         if ([zmienna.positionIsOn intValue] == 1) {
-            Product *selectedProduct = [Product readObjectWithParamterName:@"productID" andValue:zmienna.productID];
+            Product *selectedProduct = [Product readObjectWithParamterName:@"productID" andValue:[NSNumber numberWithInt:zmienna.productID]];
             podsumowanie = podsumowanie + [selectedProduct.productPrice doubleValue]/[selectedProduct.productDivide doubleValue];
         }
     }

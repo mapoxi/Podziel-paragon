@@ -14,7 +14,7 @@
 
 @property (nonatomic) int personID;
 @property (nonatomic, retain) NSNumber * positionIsOn;
-@property (nonatomic, retain) NSNumber * productID;
+@property (nonatomic) int productID;
 @property (nonatomic, retain) NSNumber * pWPID;
 
 @end

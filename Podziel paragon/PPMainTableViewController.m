@@ -81,19 +81,33 @@
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(PPListTableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    Product *writeProduct = _product[indexPath.row];
     
+    
+    Product *writeProduct = _product[indexPath.row];
     cell.label.text = writeProduct.productName;
     cell.quantity.text = [NSString stringWithFormat: @"%@", (NSString *)writeProduct.productQuantity];
     cell.price.text = [NSString stringWithFormat: @"%@", (NSString *)writeProduct.productPrice];
+     
+    //czemu nie działa to
+    /*Product *writeProduct = _product[indexPath.row];
+    cell.label.text = [NSString stringWithFormat:@"%d", writeProduct.productID];
+    cell.quantity.text = [NSString stringWithFormat: @"%@", (NSString *)writeProduct.productQuantity];
+    cell.price.text = [NSString stringWithFormat: @"%@", (NSString *)writeProduct.productPrice];
+     */
+    //a działa to
+    /*Product *writeProduct = _product[indexPath.row];
+    cell.quantity.text = [NSString stringWithFormat: @"%@", (NSString *)writeProduct.productQuantity];
+    cell.price.text = [NSString stringWithFormat: @"%@", (NSString *)writeProduct.productPrice];
+    cell.label.text = [NSString stringWithFormat:@"%d", writeProduct.productID];
+    */
     
     if (cell.switch1.tag == 0) {
-    cell.switch1.tag = [writeProduct.productID intValue]*10+1;
-    cell.switch2.tag = [writeProduct.productID intValue]*10+2;
-    cell.switch3.tag = [writeProduct.productID intValue]*10+3;
-    cell.switch4.tag = [writeProduct.productID intValue]*10+4;
-    cell.switch5.tag = [writeProduct.productID intValue]*10+5;
-    cell.switch6.tag = [writeProduct.productID intValue]*10+6;
+    cell.switch1.tag = (writeProduct.productID*10) + 1;
+    cell.switch2.tag = (writeProduct.productID*10) + 2;
+    cell.switch3.tag = (writeProduct.productID*10) + 3;
+    cell.switch4.tag = (writeProduct.productID*10) + 4;
+    cell.switch5.tag = (writeProduct.productID*10) + 5;
+    cell.switch6.tag = (writeProduct.productID*10) + 6;
         [_pPListTableViewCell addBlinkPosition:(int)cell.switch1.tag];
         [_pPListTableViewCell addBlinkPosition:(int)cell.switch2.tag];
         [_pPListTableViewCell addBlinkPosition:(int)cell.switch3.tag];

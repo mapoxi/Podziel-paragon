@@ -13,7 +13,7 @@
 @interface Product : NSManagedObject
 
 @property (nonatomic, retain) NSNumber * productDivide;
-@property (nonatomic, retain) NSNumber * productID;
+@property (nonatomic) int productID;
 @property (nonatomic, retain) NSString * productName;
 @property (nonatomic, retain) NSNumber * productPrice;
 @property (nonatomic, retain) NSNumber * productQuantity;

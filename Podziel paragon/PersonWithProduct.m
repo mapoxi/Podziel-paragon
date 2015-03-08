@@ -13,7 +13,7 @@
 
 @synthesize personID;
 @dynamic positionIsOn;
-@dynamic productID;
+@synthesize productID;
 @dynamic pWPID;
 
 @end

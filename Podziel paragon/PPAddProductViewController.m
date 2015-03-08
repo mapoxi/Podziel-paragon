@@ -29,7 +29,7 @@
  addNewProduct.productName = _addProductNameTextBox.text;
  addNewProduct.productQuantity = [NSNumber numberWithFloat:[_addProductQuantityTextBox.text floatValue]];
  addNewProduct.productPrice = [NSNumber numberWithFloat:[_addProductPriceTextBox.text floatValue]];
- addNewProduct.productID = [NSNumber numberWithInt:([lastProductID.productID intValue]+1)];
+    addNewProduct.productID = lastProductID.productID + 1;
  addNewProduct.productDivide = [NSNumber numberWithInt:0];
  
  [Product saveDatabase];

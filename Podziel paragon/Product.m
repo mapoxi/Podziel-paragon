@@ -12,7 +12,7 @@
 @implementation Product
 
 @dynamic productDivide;
-@dynamic productID;
+@synthesize productID;
 @dynamic productName;
 @dynamic productPrice;
 @dynamic productQuantity;
