@@ -21,7 +21,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *price4;
 @property (strong, nonatomic) IBOutlet UILabel *price5;
 @property (strong, nonatomic) IBOutlet UILabel *price6;
-
 @property (strong, nonatomic) NSArray *people;
 
 @end

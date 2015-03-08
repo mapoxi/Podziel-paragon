@@ -23,8 +23,8 @@
 
 - (IBAction)addProductToBill {
  NSArray *howManyCount = [Product readAllObjects];
- Product *lastProductID = [howManyCount lastObject];
  
+ Product *lastProductID = [howManyCount lastObject];
  Product *addNewProduct = [Product createObject];
  addNewProduct.productName = _addProductNameTextBox.text;
  addNewProduct.productQuantity = [NSNumber numberWithFloat:[_addProductQuantityTextBox.text floatValue]];

@@ -28,7 +28,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _pPPeopleViewCell = [[PPPeopleTableViewCell alloc] init];
-    
     self.navigationItem.title = @"Osoby";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Dodaj" style:UIBarButtonItemStylePlain target:self action:@selector(addPerson)];
 }
@@ -57,18 +56,14 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
 
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"Cell"];
-        
         Person *person = _people[indexPath.row];
-        
         cell.textLabel.text = [NSString stringWithFormat:@"%@", person.personName];
         cell.detailTextLabel.text = [NSString stringWithFormat:@"Nick: %@", person.personNick];
     }
-    
     return cell;
 }
 
