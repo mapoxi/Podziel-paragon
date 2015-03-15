@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Piotr Mlynarski. All rights reserved.
 //
 
-#import "PersonWithProduct.h"
+#import  "PersonWithProduct.h"
 
 
 @implementation PersonWithProduct
