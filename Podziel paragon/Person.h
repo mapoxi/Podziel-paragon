@@ -11,7 +11,7 @@
 
 
 @interface Person : NSManagedObject
-
+//Tu jest ok
 @property (nonatomic) int personID;
 @property (nonatomic, retain) NSString * personName;
 @property (nonatomic, retain) NSString * personNick;
